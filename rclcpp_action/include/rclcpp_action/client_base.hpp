@@ -73,6 +73,30 @@ public:
   bool
   action_server_is_ready() const;
 
+  /**  \brief Cancel a goal cancellation request. The callback registered previously will not be called anymore. Does nothing if no such request exists.
+  /* \param[in] request_id The request id of the request to cancel.
+  /* \return True if the request was cancelled, false if no such request exists.
+  */
+  RCLCPP_ACTION_PUBLIC
+  bool
+  cancel_cancellation_request(int64_t request_id);
+
+  /** \brief Cancel a goal request. The callback registered previously will not be called anymore. Does nothing if no such request exists.
+  /* \param[in] request_id The request id of the request to cancel.
+  /* \return True if the request was cancelled, false if no such request exists.
+  */
+  RCLCPP_ACTION_PUBLIC
+  bool
+  cancel_goal_request(int64_t request_id);
+
+  /** \brief Cancel a result request. The callback registered previously will not be called anymore. Does nothing if no such request exists.
+  /* \param[in] request_id The request id of the request to cancel.
+  /* \return True if the request was cancelled, false if no such request exists.
+  */
+  RCLCPP_ACTION_PUBLIC
+  bool
+  cancel_result_request(int64_t request_id);
+
   /// Wait for action_server_is_ready() to become true, or until the given timeout is reached.
   template<typename RepT = int64_t, typename RatioT = std::milli>
   bool

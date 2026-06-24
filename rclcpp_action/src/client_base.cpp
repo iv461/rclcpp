@@ -226,6 +226,21 @@ ClientBase::action_server_is_ready() const
   return is_ready;
 }
 
+bool ClientBase::cancel_cancellation_request(int64_t request_id) {
+  std::lock_guard<std::recursive_mutex> lock(pimpl_->cancel_requests_mutex);
+  return pimpl_->pending_cancel_responses.erase(request_id);
+}
+
+bool ClientBase::cancel_goal_request(int64_t request_id) {
+  std::lock_guard<std::recursive_mutex> lock(pimpl_->goal_requests_mutex);
+  return pimpl_->pending_goal_responses.erase(request_id);
+}
+
+bool ClientBase::cancel_result_request(int64_t request_id) {
+  std::lock_guard<std::recursive_mutex> lock(pimpl_->result_requests_mutex);
+  return pimpl_->pending_result_responses.erase(request_id);
+}
+
 bool
 ClientBase::wait_for_action_server_nanoseconds(std::chrono::nanoseconds timeout)
 {
