@@ -2,6 +2,115 @@
 Changelog for package rclcpp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+33.0.1 (2026-05-22)
+-------------------
+* add event_type_is_supported() for Publisher/Subscription. (`#3132 <https://github.com/ros2/rclcpp//issues/3132>`_)
+* chore: remove outdated TODO in GenericClient (`#3146 <https://github.com/ros2/rclcpp//issues/3146>`_)
+* chore: fix typo in test_time_source.cpp (`#3145 <https://github.com/ros2/rclcpp//issues/3145>`_)
+* Contributors: Pietro Gelmini, Tomoya Fujita
+
+33.0.0 (2026-05-07)
+-------------------
+* Deprecate memory strategy (`#3136 <https://github.com/ros2/rclcpp/issues/3136>`_)
+* Cleanups headers and fix wording (`#3138 <https://github.com/ros2/rclcpp/issues/3138>`_)
+* Contributors: Alejandro Hernández Cordero, Janosch Machowinski
+
+32.0.0 (2026-04-30)
+-------------------
+* Include EventsCBGExecutor (`#3137 <https://github.com/ros2/rclcpp/issues/3137>`_)
+* Fix topic statistics for IPC subscriptions (`#3130 <https://github.com/ros2/rclcpp/issues/3130>`_)
+* fix: Fixed MSVC compile errors (`#3135 <https://github.com/ros2/rclcpp/issues/3135>`_)
+* feat: Added callback group events executor (`#3097 <https://github.com/ros2/rclcpp/issues/3097>`_)
+* Fix wrong dependency (`#3133 <https://github.com/ros2/rclcpp/issues/3133>`_)
+* feat: Switch to c++20 and remove resulting compile warnings (`#3124 <https://github.com/ros2/rclcpp/issues/3124>`_)
+* fix: Compile fix for MSVC 2022 (`#3131 <https://github.com/ros2/rclcpp/issues/3131>`_)
+* Contributors: Janosch Machowinski, Maurice Alexander Purnawan, jay
+
+31.0.3 (2026-04-14)
+-------------------
+
+* Remove warnings on tests (`#3125 <https://github.com/ros2/rclcpp/issues/3125>`_)
+
+* Contributors: Alejandro Hernández Cordero
+
+31.0.2 (2026-04-09)
+-------------------
+* feat: Add per-node log level support via NodeOptions (`#3092 <https://github.com/ros2/rclcpp/issues/3092>`_)
+* Improve error message when parameter value is missing (`#3093 <https://github.com/ros2/rclcpp/issues/3093>`_)
+* Fix incorrect internal clear inside `RingBufferImplementation` (`#3116 <https://github.com/ros2/rclcpp/issues/3116>`_)
+* Add acceptable_buffer_backends field in SubscriptionOptionsBase (`#3098 <https://github.com/ros2/rclcpp/issues/3098>`_)
+* Remove comment about removed StaticSingleThreadedExecutor (`#3121 <https://github.com/ros2/rclcpp/issues/3121>`_)
+* Added tracepoint (`#3103 <https://github.com/ros2/rclcpp/issues/3103>`_)
+* Add ConstRefCallback in take_shared_method (`#3066 <https://github.com/ros2/rclcpp/issues/3066>`_)
+* Replace mispelled "${rcl_interfaces_TARGES}" by rcl_interfaces::rcl_interfaces (`#3112 <https://github.com/ros2/rclcpp/issues/3112>`_)
+* Contributors: Alexis Tsogias, CY Chen, Maurice Alexander Purnawan, Michael Carlstrom, Oren Bell, Peng Wang, Yadnyeshwar Amol Sakhare
+
+31.0.1 (2026-03-24)
+-------------------
+* Use new ROSIDL aggregate CMake target (`#3105 <https://github.com/ros2/rclcpp/issues/3105>`_)
+* remove duplicate test cases in TestAnySubscriptionCallback::is_serialized_message_callback (`#3104 <https://github.com/ros2/rclcpp/issues/3104>`_)
+* Contributors: Alexis Tsogias, Emerson Knapp
+
+31.0.0 (2026-03-20)
+-------------------
+* keep the event alive throught the assertion, preveiting the race. (`#3099 <https://github.com/ros2/rclcpp/issues/3099>`_)
+* Add support check for content filter feature in subscription (`#3089 <https://github.com/ros2/rclcpp/issues/3089>`_)
+* Expose ServiceType in Service public API (`#3088 <https://github.com/ros2/rclcpp/issues/3088>`_)
+* perf: Optimized out shared_ptr copies (`#3079 <https://github.com/ros2/rclcpp/issues/3079>`_)
+* avoid stale parameter events in content filter tests. (`#3085 <https://github.com/ros2/rclcpp/issues/3085>`_)
+* improve lookup time for matches_any_publishers() (`#3084 <https://github.com/ros2/rclcpp/issues/3084>`_)
+* Add tests isolation (`#3081 <https://github.com/ros2/rclcpp/issues/3081>`_)
+* Revert "improve lookup time for matches_any_publishers(). (`#3068 <https://github.com/ros2/rclcpp/issues/3068>`_)" (`#3077 <https://github.com/ros2/rclcpp/issues/3077>`_)
+* improve lookup time for matches_any_publishers(). (`#3068 <https://github.com/ros2/rclcpp/issues/3068>`_)
+* fix: Use default rcl allocator if allocator is std::allocator (`#3058 <https://github.com/ros2/rclcpp/issues/3058>`_)
+* fix: Various data races in test cases (`#3057 <https://github.com/ros2/rclcpp/issues/3057>`_)
+* fix: Fix data race in CallbackGroup::size() (`#3056 <https://github.com/ros2/rclcpp/issues/3056>`_)
+* Contributors: Barry Xu, Danil, Janosch Machowinski, Julien Enoch, Tomoya Fujita
+
+30.1.5 (2026-02-09)
+-------------------
+* remove default: so that compiler can detect the missing case. (`#3048 <https://github.com/ros2/rclcpp/issues/3048>`_)
+* use weak_ptr for rcl entities in the memory strategy. (`#2988 <https://github.com/ros2/rclcpp/issues/2988>`_)
+* remove test_static_executor_entities_collector.cpp (`#3041 <https://github.com/ros2/rclcpp/issues/3041>`_)
+* include the 1st spin that might throw the exception. (`#3042 <https://github.com/ros2/rclcpp/issues/3042>`_)
+* print warning message on owner node if the parameter operation fails. (`#3037 <https://github.com/ros2/rclcpp/issues/3037>`_)
+* fix context in wait for message wait set (`#3030 <https://github.com/ros2/rclcpp/issues/3030>`_)
+* Revert "construct wait set with passed in context (`#3021 <https://github.com/ros2/rclcpp/issues/3021>`_)" (`#3028 <https://github.com/ros2/rclcpp/issues/3028>`_)
+* construct wait set with passed in context (`#3021 <https://github.com/ros2/rclcpp/issues/3021>`_)
+* Improve the robustness of the TopicEndpointInfo constructor (`#3013 <https://github.com/ros2/rclcpp/issues/3013>`_)
+* Deprecate the shared_ptr<MessageT> subscription callback signatures (`#2975 <https://github.com/ros2/rclcpp/issues/2975>`_)
+* Contributors: Barry Xu, Maurice Alexander Purnawan, Michael Carroll, Rahat Dhande, Tomoya Fujita
+
+30.1.4 (2025-12-23)
+-------------------
+* Updated deprecated ament_index_cpp API (`#3011 <https://github.com/ros2/rclcpp/issues/3011>`_)
+* Unified Node Interfaces: Add const version of get_node_x_interface() (`#3006 <https://github.com/ros2/rclcpp/issues/3006>`_)
+* Parameter Descriptor Simplification  (`#2179 <https://github.com/ros2/rclcpp/issues/2179>`_)
+* ParameterEventHandler support ContentFiltering (`#2971 <https://github.com/ros2/rclcpp/issues/2971>`_)
+* update policy_name_from_kind && test_qos (`#2156 <https://github.com/ros2/rclcpp/issues/2156>`_)
+* Add ability to disable and enable subscription's callbacks (`#2985 <https://github.com/ros2/rclcpp/issues/2985>`_)
+* Switch to isolated testing via rmw_test_fixture (`#2929 <https://github.com/ros2/rclcpp/issues/2929>`_)
+* remove I/O from signal handler. (`#2986 <https://github.com/ros2/rclcpp/issues/2986>`_)
+* Contributors: Alejandro Hernández Cordero, Andrianov Roman, Barry Xu, Lucas Wendland, Michael Orlov, Tomoya Fujita, fabianhirmann, yadunund
+
+30.1.3 (2025-11-18)
+-------------------
+* correct test function descriptions (`#2970 <https://github.com/ros2/rclcpp/issues/2970>`_)
+* add : get clients, servers info (`#2569 <https://github.com/ros2/rclcpp/issues/2569>`_)
+* Fix REP url locations (`#2987 <https://github.com/ros2/rclcpp/issues/2987>`_)
+* Contributors: Minju, Lee, Tim Clephas, Yuchen966
+
+30.1.2 (2025-10-21)
+-------------------
+* clear handles before node destruction in test_memory_strategy. (`#2969 <https://github.com/ros2/rclcpp/issues/2969>`_)
+* Added static assert asserting custom types have no overloaded operator new (`#2954 <https://github.com/ros2/rclcpp/issues/2954>`_)
+* Store graph listener inside the context instead of the node graph (`#2952 <https://github.com/ros2/rclcpp/issues/2952>`_)
+* Reapply "Catch the exception from rate.sleep() if the context is invalid. (`#2956 <https://github.com/ros2/rclcpp/issues/2956>`_)" (`#2963 <https://github.com/ros2/rclcpp/issues/2963>`_) (`#2964 <https://github.com/ros2/rclcpp/issues/2964>`_)
+* Revert "Catch the exception from rate.sleep() if the context is invalid. (`#2956 <https://github.com/ros2/rclcpp/issues/2956>`_)" (`#2963 <https://github.com/ros2/rclcpp/issues/2963>`_)
+* Catch the exception from rate.sleep() if the context is invalid. (`#2956 <https://github.com/ros2/rclcpp/issues/2956>`_)
+* update Time documentation (`#2955 <https://github.com/ros2/rclcpp/issues/2955>`_)
+* Contributors: Ilario A. Azzollini, Ivo Ivanov, Skyler Medeiros, Tomoya Fujita
+
 30.1.1 (2025-09-11)
 -------------------
 * Removed warning (`#2949 <https://github.com/ros2/rclcpp/issues/2949>`_)

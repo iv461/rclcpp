@@ -2,6 +2,53 @@
 Changelog for package rclcpp_components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+33.0.1 (2026-05-22)
+-------------------
+
+33.0.0 (2026-05-07)
+-------------------
+* Cleanups headers and fix wording (`#3138 <https://github.com/ros2/rclcpp/issues/3138>`_)
+* Contributors: Alejandro Hernández Cordero
+
+32.0.0 (2026-04-30)
+-------------------
+* Refactor component containers + Add option for CBG Executor (`#3134 <https://github.com/ros2/rclcpp/issues/3134>`_)
+* Contributors: Skyler Medeiros
+
+31.0.2 (2026-04-09)
+-------------------
+* feat: Add per-node log level support via NodeOptions (`#3092 <https://github.com/ros2/rclcpp/issues/3092>`_)
+* Contributors: Peng Wang
+
+31.0.1 (2026-03-24)
+-------------------
+* Use new ROSIDL aggregate CMake target (`#3105 <https://github.com/ros2/rclcpp/issues/3105>`_)
+* Contributors: Emerson Knapp
+
+31.0.0 (2026-03-20)
+-------------------
+* Avoid unecessary creation of MultiThreadedExecutor (`#3090 <https://github.com/ros2/rclcpp/issues/3090>`_)
+* Fix component registering in subdirectories (`#3064 <https://github.com/ros2/rclcpp/issues/3064>`_)
+* Contributors: pum1k, solo
+
+30.1.5 (2026-02-09)
+-------------------
+* Add library dependency to node executable in rclcpp_components_register_node (`#3047 <https://github.com/ros2/rclcpp/issues/3047>`_)
+* Contributors: YuJin Hong
+
+30.1.4 (2025-12-23)
+-------------------
+* Updated deprecated ament_index_cpp API (`#3011 <https://github.com/ros2/rclcpp/issues/3011>`_)
+* Contributors: Alejandro Hernández Cordero
+
+30.1.3 (2025-11-18)
+-------------------
+* Fix REP url locations (`#2987 <https://github.com/ros2/rclcpp/issues/2987>`_)
+* Contributors: Tim Clephas
+
+30.1.2 (2025-10-21)
+-------------------
+
 30.1.1 (2025-09-11)
 -------------------
 * Cleanup the dependencies in rclcpp_components. (`#2918 <https://github.com/ros2/rclcpp/issues/2918>`_)

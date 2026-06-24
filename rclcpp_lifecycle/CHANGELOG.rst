@@ -2,6 +2,45 @@
 Changelog for package rclcpp_lifecycle
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+33.0.1 (2026-05-22)
+-------------------
+
+33.0.0 (2026-05-07)
+-------------------
+* Cleanups headers and fix wording (`#3138 <https://github.com/ros2/rclcpp/issues/3138>`_)
+* Contributors: Alejandro Hernández Cordero
+
+32.0.0 (2026-04-30)
+-------------------
+
+31.0.2 (2026-04-09)
+-------------------
+
+31.0.1 (2026-03-24)
+-------------------
+* Use new ROSIDL aggregate CMake target (`#3105 <https://github.com/ros2/rclcpp/issues/3105>`_)
+* Contributors: Emerson Knapp
+
+31.0.0 (2026-03-20)
+-------------------
+
+30.1.5 (2026-02-09)
+-------------------
+* Compatiblity with 'Populate Transitions' `ros2/rcl#1269 <https://github.com/ros2/rcl/issues/1269>`_ (`#2967 <https://github.com/ros2/rclcpp/issues/2967>`_)
+* Contributors: Jasper van Brakel
+
+30.1.4 (2025-12-23)
+-------------------
+
+30.1.3 (2025-11-18)
+-------------------
+* add : get clients, servers info (`#2569 <https://github.com/ros2/rclcpp/issues/2569>`_)
+* Fix REP url locations (`#2987 <https://github.com/ros2/rclcpp/issues/2987>`_)
+* Add get_parameter_or overload returning value or alternative (`#2973 <https://github.com/ros2/rclcpp/issues/2973>`_)
+* Contributors: Minju, Lee, Tim Clephas, Zheng Qu
+
+30.1.2 (2025-10-21)
+-------------------
 
 30.1.1 (2025-09-11)
 -------------------

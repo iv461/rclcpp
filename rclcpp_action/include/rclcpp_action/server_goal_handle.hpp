@@ -151,13 +151,20 @@ public:
    * If execution of a goal is deferred then `ServerGoalHandle::set_executing()` must be called
    * first.
    *
-   * \throws std::runtime_error If the goal is in any state besides executing.
+   * If the goal is in any state besides executing, a warning will be logged and the feedback
+   * will not be published.
    *
    * \param[in] feedback_msg the message to publish to clients.
    */
   void
   publish_feedback(std::shared_ptr<typename ActionT::Feedback> feedback_msg)
   {
+    if (!is_executing()) {
+      RCLCPP_WARN(
+        rclcpp::get_logger("rclcpp_action"),
+        "publish_feedback() called on a goal handle not in executing state, ignoring");
+      return;
+    }
     auto feedback_message = std::make_shared<typename ActionT::Impl::FeedbackMessage>();
     feedback_message->goal_id.uuid = uuid_;
     feedback_message->feedback = *feedback_msg;
@@ -210,7 +217,7 @@ public:
    * This is a terminal state, no more methods should be called on a goal handle after this is
    * called.
    *
-   * \throws rclcpp::exceptions::RCLError If the goal is in any state besides executing.
+   * \throws rclcpp::exceptions::RCLError If a cancel request for this goal has not been received.
    *
    * \param[in] result_msg the final result to send to clients.
    */

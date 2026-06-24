@@ -25,7 +25,6 @@
 #include "rclcpp/memory_strategy.hpp"
 #include "rclcpp/executors/single_threaded_executor.hpp"
 #include "rclcpp/rclcpp.hpp"
-#include "rclcpp/strategies/allocator_memory_strategy.hpp"
 
 #include "test_msgs/msg/empty.hpp"
 
@@ -342,12 +341,12 @@ TEST_F(TestExecutor, spin_all_fail_wait_set_clear) {
   subscription =
     rclcpp::create_subscription<test_msgs::msg::Empty>(
     node_topics, "test", rclcpp::QoS(10), std::move(callback));
-  auto mock = mocking_utils::patch_and_return("lib:rclcpp", rcl_wait_set_clear, RCL_RET_ERROR);
 
-  dummy.spin_all(std::chrono::milliseconds(1));
-  // second spin_all triggers rcl_wait_set_clear that should be called
-  // whenever a waitset gets rebuild and it was not changed in size.
+  auto mock = mocking_utils::patch_and_return("lib:rclcpp", rcl_wait_set_clear, RCL_RET_ERROR);
   RCLCPP_EXPECT_THROW_EQ(
+    // the first spin might trigger the rebuild, but only the second triggers
+    // it for sure, therefore we spin two times
+    dummy.spin_all(std::chrono::milliseconds(1));
     dummy.spin_all(std::chrono::milliseconds(1)),
     std::runtime_error("Couldn't clear the wait set: error not set"));
 }

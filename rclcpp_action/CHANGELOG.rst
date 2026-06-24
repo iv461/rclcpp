@@ -3,6 +3,54 @@ Changelog for package rclcpp_action
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
+33.0.1 (2026-05-22)
+-------------------
+
+33.0.0 (2026-05-07)
+-------------------
+* Cleanups headers and fix wording (`#3138 <https://github.com/ros2/rclcpp/issues/3138>`_)
+* Contributors: Alejandro Hernández Cordero
+
+32.0.0 (2026-04-30)
+-------------------
+
+31.0.2 (2026-04-09)
+-------------------
+* publish_feedback should effect only on executing state. (`#3118 <https://github.com/ros2/rclcpp/issues/3118>`_)
+* Support to configure feedback subscription content filter for action client (`#3034 <https://github.com/ros2/rclcpp/issues/3034>`_)
+* Contributors: Barry Xu, Tomoya Fujita
+
+31.0.1 (2026-03-24)
+-------------------
+* Use new ROSIDL aggregate CMake target (`#3105 <https://github.com/ros2/rclcpp/issues/3105>`_)
+* Contributors: Emerson Knapp
+
+31.0.0 (2026-03-20)
+-------------------
+* Fix expiration of action goals when EventsExecutors are used (`#3018 <https://github.com/ros2/rclcpp/issues/3018>`_)
+* perf: Optimized out shared_ptr copies (`#3079 <https://github.com/ros2/rclcpp/issues/3079>`_)
+* Contributors: Janosch Machowinski, Skyler Medeiros
+
+30.1.5 (2026-02-09)
+-------------------
+* remove default: so that compiler can detect the missing case. (`#3048 <https://github.com/ros2/rclcpp/issues/3048>`_)
+* Update exception documentation for goal cancellation in ServerGoalHandle (`#3019 <https://github.com/ros2/rclcpp/issues/3019>`_)
+* Contributors: Andrei Costinescu, Tomoya Fujita
+
+30.1.4 (2025-12-23)
+-------------------
+
+30.1.3 (2025-11-18)
+-------------------
+* Fix REP url locations (`#2987 <https://github.com/ros2/rclcpp/issues/2987>`_)
+* Contributors: Tim Clephas
+
+30.1.2 (2025-10-21)
+-------------------
+* it misses the iterator second to lock the weakptr. (`#2958 <https://github.com/ros2/rclcpp/issues/2958>`_)
+* try aborting before canceling 1st on dtor of ServerGoalHandle. (`#2953 <https://github.com/ros2/rclcpp/issues/2953>`_)
+* Contributors: Tomoya Fujita
+
 30.1.1 (2025-09-11)
 -------------------
 * deprecate rclcpp::spin_some and rclcpp::spin_all (`#2848 <https://github.com/ros2/rclcpp/issues/2848>`_)
